@@ -8,7 +8,11 @@
     <body>
 
         <div id="app" class="wrapper">
-            <h2>My Todos</h2>
+            <h2>
+                <button @click="purge">purge</button>
+                My Todos
+                <span class="info">({{remaining.length}}/{{todos.length}})</span>
+            </h2>
             <ul v-if="todos.length">
                 <li v-for="(todo,index) in todos">
                     <input type="checkbox" v-model="todo.isDone">
